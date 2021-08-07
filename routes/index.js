@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 let ws = require("nodejs-websocket");
+let net = require('net');
 
 // Receive message and send message back
 function loadMessage(conn, str) {
@@ -9,6 +10,20 @@ function loadMessage(conn, str) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+
+    let port = 0
+    let result = {}
+
+    let srv = net.createServer(function (sock) {
+        sock.end('Hello from server\n');
+    });
+    srv.listen(0, function () {
+        port = srv.address().port;
+        console.log('DEMO: Create port on '+port)
+    });
+
+    console.log(port)
+
     // Create websocket
     let server = ws
         .createServer(function (conn) {
@@ -22,11 +37,13 @@ router.get('/', function (req, res, next) {
                 console.log("Connection closed.");
             });
         })
-        .listen(8001);
+        .listen(port);
 
     console.log("Connection created.");
 
-    res.render('index');
+    res.render('index', {
+        "port": port
+    });
 });
 
 module.exports = router;

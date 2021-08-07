@@ -7,6 +7,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+<%- port %>
 <div class="container">
     <p class="h1">Demo of a zoom meeting</p>
     <div class="row">
@@ -19,27 +20,29 @@
             </form>
         </div>
         <div class="col-lg-6">
-            <div class="row">
+            <div class="row" id="">
                 <form class="col-12" id="clientForm1">
                     <div class="form-group">
                         <label for="clientText1">Client 1:</label>
                         <textarea class="form-control" id="clientText1" rows="8" readonly></textarea>
-                        <button type="button" class="col-3 offset-3 mt-2 btn btn-outline-danger">Disconnect</button>
-                        <button type="button" class="col-3 offset-1 mt-2 btn btn-outline-success">Reconnect</button>
+                        <button type="button" class="col-3 offset-8 mt-2 btn btn-outline-success" id="clientBtn1">Connected</button>
                     </div>
                 </form>
                 <form class="col-12" id="clientForm2">
                     <div class="form-group">
                         <label for="clientText2">Client 2:</label>
                         <textarea class="form-control" id="clientText2" rows="8" readonly></textarea>
-                        <button type="button" class="col-3 offset-3 mt-2 btn btn-outline-danger">Disconnect</button>
-                        <button type="button" class="col-3 offset-1 mt-2 btn btn-outline-success">Reconnect</button>
+                        <button type="button" class="col-3 offset-8 mt-2 btn btn-outline-success" id="clientBtn2">Connected</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    let port = <%- port %>
+</script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
