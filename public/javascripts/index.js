@@ -70,7 +70,7 @@ $(function () {
         let condition = 0;
         if (value.substring(currentContent.length).length > 1) {
             condition = 1;
-        } else if (value.substring(0, currentContent.length) != currentContent) {
+        } else if (value.substring(0, currentContent.length) !== currentContent) {
             condition = 1;
         }
         if (condition) {
@@ -118,7 +118,7 @@ function update() {
                 }
             }
         } else {
-            $("#clientLabel" + (i + 1)).html('Client ' + (i + 1) + ': <font color="red">Disconnected.</font>');
+            $("#clientLabel" + (i + 1)).html('Client ' + (i + 1) + ': <span style="color: red">Disconnected.</span>');
         }
     }
 }
