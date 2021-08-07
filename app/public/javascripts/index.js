@@ -126,7 +126,7 @@ function update() {
 
     let currentLength = currentContent.split(' ').length;
 
-    if (!summarizeLock && currentLength !== summarizedLength && ((currentLength - summarizedLength) % 4 === 0)) {
+    if (!summarizeLock && currentLength !== summarizedLength && ((currentLength - summarizedLength) % 8 === 0)) {
         // console.log(summarizeLock)
         summarizeLock = true;
         // console.log(currentContent.split(' ').length)

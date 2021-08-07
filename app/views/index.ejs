@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Reconnect | Unihack'21 Devil Otter</title>
+    <title>Reconnect System Simulation | Unihack'21 Devil Otter</title>
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -20,11 +20,12 @@
     body {
         background: url('/images/backgrounds/3_waterlight.jpg') no-repeat center fixed;
         background-size: cover;
-        padding-top: 3.5em;
+        /*padding-top: 1em;*/
     }
 </style>
 
-<div class="container border-left border-right border-dark rounded" style="background-color: rgba(255,255,255,0.8)">
+<div class="container mt-3 border-left border-right border-dark rounded"
+     style="background-color: rgba(255,255,255,0.8)">
     <p class="h1 mt-3">Reconnect Algorithm Simulation</p>
     <div class="row">
         <div class="col-lg-6">
@@ -75,7 +76,18 @@
         </div>
     </div>
 
-    <div class="row mt-3"></div>
+    <div class="row mt-3 mb-3"></div>
+</div>
+
+<div class="container mt-2">
+    <footer class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.6); color: white">
+        Reconnect System Simulation - <a href="https://github.com/garywei944/Reconnect-Unihack21_Devil_Otter"
+                                         class="text-white" target="_blank">Github Repo</a>
+        <a href="https://github.com/garywei944" class="text-white" target="_blank">garywei944</a>
+        <a href="https://github.com/KelinSashaACWG" class="text-white" target="_blank">KelinSashaACWG</a>
+        <a href="https://github.com/LarryC01" class="text-white" target="_blank">LarryC01</a>
+        <a href="https://github.com/PatrickWang-1" class="text-white" target="_blank">PatrickWang-1</a>
+    </footer>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -86,5 +98,8 @@
 <script src="https://cdn.jsdelivr.net/npm/ejs@3.1.6/ejs.min.js"
         integrity="sha256-mOsgtygNfXBUPc/+cc19yr+g0jieqYOgRL5xFD2sC0Y=" crossorigin="anonymous"></script>
 <script src="/javascripts/index.js"></script>
+<script>
+    $("footer").append("&copy; " + (new Date).getFullYear());
+</script>
 </body>
 </html>
