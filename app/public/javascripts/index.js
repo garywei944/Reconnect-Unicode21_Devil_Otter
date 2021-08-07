@@ -1,17 +1,9 @@
-const ws = new WebSocket("ws://127.0.0.1:"+port);
-ws.onopen = function (event) {
-    ws.send("hello World");
-};
-ws.onmessage = function (event) {
-    console.log("Received Data")
-    console.log(event.data);
-};
-ws.onclose = function (event) {
-    console.log("Closed", event);
-};
-
-
 let currentContent = "";
+let summarizedContent = "";
+
+let summarizedLength = 0;
+let summarizeLock = false;
+
 const data = {
     date: 0,
     content: "data",
@@ -85,6 +77,19 @@ $(function () {
     update();
 });
 
+function updateSummarizedContent(data) {
+    console.log("Try to call ML")
+    $.post('/api/summarize', {
+        data: data
+    }, (v) => {
+        summarizedContent = v;
+        summarizedLength = data.split(' ').length;
+        console.log(summarizedContent)
+        $("#summarized").text(summarizedContent)
+        summarizeLock = false;
+    })
+}
+
 function update() {
     window.setTimeout(update, 50);
     if (database.length === 0) {
@@ -117,5 +122,17 @@ function update() {
         } else {
             $("#clientLabel" + (i + 1)).html('Client ' + (i + 1) + ': <span style="color: red">Disconnected.</span>');
         }
+    }
+
+    let currentLength = currentContent.split(' ').length;
+
+    if (!summarizeLock && currentLength !== summarizedLength && ((currentLength - summarizedLength) % 4 === 0)) {
+        // console.log(summarizeLock)
+        summarizeLock = true;
+        // console.log(currentContent.split(' ').length)
+        // console.log(currentContent.split(' '))
+        // console.log(summarizedContent.split(' ').length)
+        // console.log(summarizedContent.split(' '))
+        updateSummarizedContent(currentContent)
     }
 }

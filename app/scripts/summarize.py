@@ -3,9 +3,11 @@ import sys
 
 
 if __name__ == "__main__":
-    to_tokenize = sys.stdin.read()
+    doc = str(sys.stdin.read())
+    doc_len = len(doc.split(' '))
 
     summarizer = pipeline("summarization")
-    summarized = summarizer(to_tokenize, min_length=75, max_length=300)
+    summarized = summarizer(doc, min_length=int(min(150, doc_len/4)), max_length=int(min(300, doc_len/2)))
 
     sys.stdout.write(summarized[0]['summary_text'])
+    sys.stderr.write("Finished")

@@ -3,15 +3,11 @@ const router = new Router();
 const child_process = require('child_process');
 
 router
-    .get('/:port/summarize', async function (req, res) {
-        const port = req.params.port;
-
+    .post('/summarize', async function (req, res) {
         console.log('Enter summarize')
 
-        let worker = child_process.spawn('python', [appRoot + '/scripts/summarize.py']);
-
-        // TODO: get data
-        let data = 'some data';
+        const data = req.body.data;
+        const worker = child_process.spawn('python', [appRoot + '/scripts/summarize.py']);
         let output = null;
 
         worker.stdin.write(data);
@@ -19,6 +15,10 @@ router
 
         worker.stdout.on('data', function (data) {
             output = data;
+        });
+
+        worker.stderr.on('data', function (data) {
+            console.log('stderr: ' + data);
         });
 
         worker.on('close', function (code) {
