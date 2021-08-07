@@ -1,14 +1,14 @@
-// const ws = new WebSocket("ws://127.0.0.1:" + port);
-// ws.onopen = function (event) {
-//     ws.send("hello World");
-// };
-// ws.onmessage = function (event) {
-//     console.log("Received Data")
-//     console.log(event.data);
-// };
-// ws.onclose = function (event) {
-//     console.log("Closed", event);
-// };
+const ws = new WebSocket("ws://127.0.0.1:"+port);
+ws.onopen = function (event) {
+    ws.send("hello World");
+};
+ws.onmessage = function (event) {
+    console.log("Received Data")
+    console.log(event.data);
+};
+ws.onclose = function (event) {
+    console.log("Closed", event);
+};
 
 // Change log, since merged with lvd
 // 1. Use let instead of var
