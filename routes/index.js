@@ -10,7 +10,6 @@ function loadMessage(conn, str) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-
     // let port = 0
     // let result = {}
     //

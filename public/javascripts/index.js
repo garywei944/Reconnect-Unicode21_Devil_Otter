@@ -10,7 +10,7 @@
 //     console.log("Closed", event);
 // };
 
-// Change log
+// Change log, since merged with lvd
 // 1. Use let instead of var
 // 2. Use === instead of ==
 
