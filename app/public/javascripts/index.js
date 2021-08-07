@@ -10,9 +10,6 @@ ws.onclose = function (event) {
     console.log("Closed", event);
 };
 
-// Change log, since merged with lvd
-// 1. Use let instead of var
-// 2. Use === instead of ==
 
 let currentContent = "";
 const data = {

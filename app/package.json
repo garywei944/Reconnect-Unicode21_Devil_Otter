@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node app.js",
     "dev": "browser-sync start --proxy 'localhost:5000' --files 'public' 'src' 'views'"
   },
   "dependencies": {
@@ -11,8 +11,11 @@
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-promise-router": "^4.1.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "nodejs-websocket": "^1.7.2"
+    "nodejs-websocket": "^1.7.2",
+    "python-shell": "^3.0.0",
+    "serve-favicon": "^2.5.0"
   }
 }

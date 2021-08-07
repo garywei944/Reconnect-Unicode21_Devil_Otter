@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-let ws = require("nodejs-websocket");
+const routes = require('./routes');
+
+const mountAPI = require('./api');
 
 function requestNewPort() {
     const server = ws.createServer(function (conn) {
@@ -20,12 +20,9 @@ function requestNewPort() {
     return server.socket.address().port;
 }
 
-router.get('/', function (req, res, next) {
-    let port = requestNewPort();
 
-    res.render('index', {
-        port: port
-    });
-});
+module.exports = app => {
+    mountAPI(app);
 
-module.exports = router;
+    app.use('/', routes)
+}
