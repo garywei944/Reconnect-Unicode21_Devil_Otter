@@ -1,0 +1,14 @@
+name: reconnect
+channels:
+  - nvidia
+  - pytorch
+  - huggingface
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pip
+  - pytorch
+  - cudatoolkit=11.1
+  - transformers
+  - datasets
