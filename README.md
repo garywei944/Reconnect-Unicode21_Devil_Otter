@@ -5,25 +5,6 @@ Reconnect System (断线重联系统)
 ![Reconnect System Logo](Reconnect_cover.png)
 ![Reconnect System](Reconnect_System.png)
 
-## Python environment installation
-1. Install [`mamaba`](https://github.com/mamba-org/mamba), a C-implementation of `conda`.
-2. Install conda virtual environment with `mamba`
-```shell
-cd app/scripts && mamba env create -f environment.yml
-```
-
-3. Activate the python environment and start the express back-end server
-```shell
-# cd to the project root directory
-conda activate reconnect
-cd app && npm start
-```
-
-4. Open [localhost:5000](http://localhost:5000/) in your favorite browser.
-
-## GitHub Repository
-[garywei944/Reconnect-Unihack21_Devil_Otter](https://github.com/garywei944/Reconnect-Unihack21_Devil_Otter)
-
 ## Elevator Pitch
 你有没有经历过这样的烦恼：上网课时，抬头低头间，发现教授讲的内容已经听不懂了；实习时和小组远程联络的时候，一走神，发现组长交待的任务没有听清楚；看大司马直播打英雄联盟时，去趟厕所回来后发现他的基地已经爆炸了......种种这些经历，是否让你特别烦恼，特别开胃，感觉特别下饭？不用着急，因为我们开发了断线重联系统，Reconnect System，可以在你掉线、走神回来后帮你快速弥补损失的内容，从而重新跟上进度。在网络会议、直播逐步成为生活中必需品的时代，断线重联系统会更好的帮助用户获取、收集、整合信息。
 
@@ -55,6 +36,22 @@ cd app && npm start
 
 ## 发展前景
 基于这个有极大扩张性的系统，我们可以继续增加视频转文字的功能，让断开连接时参会者没有听到的主讲人的视频中内容变成概括后的文字被参会者接收到，形成一个更加现实的解决问题的“真正的会议软件”。
+
+## Python environment installation
+1. Install [`mamaba`](https://github.com/mamba-org/mamba), a C-implementation of `conda`.
+2. Install conda virtual environment with `mamba`
+```shell
+cd app/scripts && mamba env create -f environment.yml
+```
+
+3. Activate the python environment and start the express back-end server
+```shell
+# cd to the project root directory
+conda activate reconnect
+cd app && npm start
+```
+
+4. Open [localhost:5000](http://localhost:5000/) in your favorite browser.
 
 ## Contributor
 *Listed in lexicographical order.*
