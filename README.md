@@ -1,4 +1,9 @@
-# Reconnect-Unicode21_Devil_Otter
+# Reconnect System
+
+## [Unihack'21](https://unihack21.devpost.com/)
+* 1st place
+* ￥10,000 awarded
+* Hackathon submission link: [https://devpost.com/software/group-8](https://devpost.com/software/group-8)
 
 ## Project Name
 <a href="https://youtu.be/8RYjgz0gFDg">
